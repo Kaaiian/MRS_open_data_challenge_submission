@@ -1,7 +1,5 @@
 # MRS Open Data Challenge
 
-Please see submission.ipynb for fully rendered submission (github markdown does not support latex).
-
 # 1. Abstract
 
 
