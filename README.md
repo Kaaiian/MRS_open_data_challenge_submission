@@ -67,15 +67,13 @@ This function contains code that is not critical to the submission but gives goo
 Two key metrics were examined to determine the ability of machine learning algorithms to extrapolate, **precision** and **recall**. Precision and recall are formally defined by the following,
 
 
-$$
-precision = \frac{tp}{tp+fp} = \frac{\text{# correct}}{\text{# predicted as extraordinary}}
-$$
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;precision = \frac{tp}{tp+fp} " title="precision" />
+```math
+precision = tp / (tp+fp) = # correct / (# predicted as extraordinary)
+```
 
-$$
-recall = \frac{tp}{fn+tp} = \frac{\text{# identified}}{\text{# of extraordinary compounds}}
-$$
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;recall = \frac{tp}{fn+tp} " title="recall" />
+```math
+recall = tp / (fn+tp) = # identified / (# of extraordinary compounds)
+```
 
 where tp, fp, tn, fn are the true-positives, false-positives, true-negatives, and false-negatives respectively. As mentioned above, formulae with bulk modulus values above 300 GPa were marked as extraordinary (positive) or ordinary (negative). This corresponds to predicting an extraordinary compound as extraordinary (tp), predicting an ordinary compound and extraordinary (fp), predicting ordinary compounds as ordinary (tn) and predicting extraordinary compounds as ordinary (fn).
 
