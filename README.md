@@ -54,7 +54,7 @@ The bulk modulus data only contains formulae and bulk modulus values. These form
 
 This file outlines the programming steps required to obtain the final results and figures we discuss below. The file is split into two parts. The first section performs the optimization, training, and testing of linear (ridge) and non-linear (SVR) regressions models. Optimization steps are done using a grid search. Training metrics are obtained with 5-fold cross-validation. Test metrics are computed from a model created using the full training data.
 
-The second section considers classification models. This is done using the same type of optimization, training, and testing but using different endpoints (log-loss vs. R$^2$). These classification models also introduce the idea of decision making based on threshold values. These values can be optimized on the training set and used for obtaining performance metrics (precision and recall) on the test set. We can perform similar thresholding on the regression data and compare the classification and regression model performance side by side using the same metrics.
+The second section considers classification models. This is done using the same type of optimization, training, and testing but using different endpoints (log-loss vs. R2). These classification models also introduce the idea of decision making based on threshold values. These values can be optimized on the training set and used for obtaining performance metrics (precision and recall) on the test set. We can perform similar thresholding on the regression data and compare the classification and regression model performance side by side using the same metrics.
 
 ### ```utils.py```
 
