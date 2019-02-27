@@ -1,5 +1,6 @@
-# MRS_Open_Data_Challenge
+# MRS Open Data Challenge
 
+Please see submission.ipynb for fully rendered submission (github markdown does not support latex).
 
 # 1. Abstract
 
@@ -23,18 +24,18 @@ Investigate the capabilities of machine learning for extrapolation.
 
 ## Curating the data
 
-DFT computed bulk modulus ($\kappa$, Voigt-Ruess-Hill) data were gathered from the materials project (MP) and the AFLOW online repository. For the materials project data, we applied a "lowest formation energy" selection criteria to remove duplicate formula. For the AFLOW data, we averaged duplicate values. These data sets were then combined. In the case of duplicates, AFLOW values were selected over MP since they are associated with an actual ICSD structure. The combined data resulted in approximately 12,000 unique formulae and their respective bulk modulus values. 
+DFT computed bulk modulus (K, Voigt-Ruess-Hill) data were gathered from the materials project (MP) and the AFLOW online repository. For the materials project data, we applied a "lowest formation energy" selection criteria to remove duplicate formula. For the AFLOW data, we averaged duplicate values. These data sets were then combined. In the case of duplicates, AFLOW values were selected over MP since they are associated with an actual ICSD structure. The combined data resulted in approximately 12,000 unique formulae and their respective bulk modulus values. 
 
 ## Application of machine learning
 
 
 ### ```process_data.py```
 
-The combined data was read in as a pandas DataFrame containing 12029 unique formula. After vectorization, the data was reduced down to 11993 compounds with 176 features (see ```composition.py```) after removing compounds with the elements Pa and Pu. We then converted the data into a training set and a testing set. The test set (size $=$ 5100) is composed from the data with the highest 100 values ($\kappa=297-435\;GPa$) and 5000 randomly selected compounds from the bottom 11895 compounds. The training set (size $=$ 6893) contains the remaining data (max $\kappa=296 \;GPa$).
+The combined data was read in as a pandas DataFrame containing 12029 unique formula. After vectorization, the data was reduced down to 11993 compounds with 176 features (see ```composition.py```) after removing compounds with the elements Pa and Pu. We then converted the data into a training set and a testing set. The test set (size = 5100) is composed from the data with the highest 100 values (K = 297-435 GPa) and 5000 randomly selected compounds from the bottom 11895 compounds. The training set (size = 6893) contains the remaining data (max K = 296 GPa).
 
-To allow for a classification task, we needed to label the data. For the test set, we converted these values into labels representing "extraordinary" ($\kappa>300\;GPa$) and "ordinary" ($\kappa<300\;GPa$). The training set was labeled with "extraordinary" values above $\kappa=245\;GPa$ leaving the rest as "ordinary".
+To allow for a classification task, we needed to label the data. For the test set, we converted these values into labels representing "extraordinary" (K > 300 GPa) and "ordinary" (K < 300 GPa). The training set was labeled with "extraordinary" values above K = 245 GPa leaving the rest as "ordinary".
 
-Due to the limitations of gradient descent algorithms [reference], we also normalized and standardized the feature vectors both for training and test data. This was done using ```sklearn.preprocessing.StandardScaler``` and ```sklearn.preprocessing.Normalizer```.
+Due to the limitations of gradient descent algorithms, we also normalized and standardized the feature vectors both for training and test data. This was done using ```sklearn.preprocessing.StandardScaler``` and ```sklearn.preprocessing.Normalizer```.
 
 After processing, the data was saved to CSV files:
 
@@ -65,15 +66,16 @@ This function contains code that is not critical to the submission but gives goo
 
 Two key metrics were examined to determine the ability of machine learning algorithms to extrapolate, **precision** and **recall**. Precision and recall are formally defined by the following,
 
+
 ```math
-precision = \frac{tp}{tp+fp} = \frac{\text{# correct}}{\text{# predicted as extraordinary}}
+precision = tp / (tp+fp) = # correct / (# predicted as extraordinary)
 ```
 
 ```math
-recall = \frac{tp}{fn+tp} = \frac{\text{# identified}}{\text{# of extraordinary compounds}}
+recall = tp / (fn+tp) = # identified / (# of extraordinary compounds)
 ```
 
-where tp, fp, tn, fn are the true-positives, false-positives, true-negatives, and false-negatives respectively. As mentioned above, formulae with bulk modulus values above $300\;GPa$ were marked as extraordinary (positive) or ordinary (negative). This corresponds to predicting an extraordinary compound as extraordinary (tp), predicting an ordinary compound and extraordinary (fp), predicting ordinary compounds as ordinary (tn) and predicting extraordinary compounds as ordinary (fn).
+where tp, fp, tn, fn are the true-positives, false-positives, true-negatives, and false-negatives respectively. As mentioned above, formulae with bulk modulus values above 300 GPa were marked as extraordinary (positive) or ordinary (negative). This corresponds to predicting an extraordinary compound as extraordinary (tp), predicting an ordinary compound and extraordinary (fp), predicting ordinary compounds as ordinary (tn) and predicting extraordinary compounds as ordinary (fn).
 
 We use precision as our metric for telling us how often we expect our predictions to be correct. If I predict 240 compounds as extraordinary, a precision of 0.5 indicates that we can expect 120 compounds to actually be extraordinary.
 
