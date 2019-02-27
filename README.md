@@ -65,6 +65,7 @@ This function contains code that is not critical to the submission but gives goo
 
 Two key metrics were examined to determine the ability of machine learning algorithms to extrapolate, **precision** and **recall**. Precision and recall are formally defined by the following,
 
+'''
 $$
 precision = \frac{tp}{tp+fp} = \frac{\text{# correct}}{\text{# predicted as extraordinary}}
 $$
@@ -72,6 +73,7 @@ $$
 $$
 recall = \frac{tp}{fn+tp} = \frac{\text{# identified}}{\text{# of extraordinary compounds}}
 $$
+'''
 
 where tp, fp, tn, fn are the true-positives, false-positives, true-negatives, and false-negatives respectively. As mentioned above, formulae with bulk modulus values above $300\;GPa$ were marked as extraordinary (positive) or ordinary (negative). This corresponds to predicting an extraordinary compound as extraordinary (tp), predicting an ordinary compound and extraordinary (fp), predicting ordinary compounds as ordinary (tn) and predicting extraordinary compounds as ordinary (fn).
 
@@ -93,7 +95,7 @@ The following figures show the distinct advantages to a classification approach.
 | $\:$| Linear  | Non-linear|
 |:---|:---|:---|
 |**Regression** | ![](figures/rr_test_reg_thresh=210.00.png)| ![](figures/svr_test_reg_thresh=195.00.png)  |  
-|**Classification** | ![](figures/lr_test_prob_thresh=0.25.png)  |  ![](figures/svc_test_prob_thresh=0.16.png)|
+|**Classification** | ![](figures/lr_test_prob_thresh=0.25.png)  |  ![](figures/svc_test_prob_thresh=0.20.png)|
 
 Ultimately, the objective is to evaluate whether or not extrapolation is possible in materials research. All four models clearly extrapolate beyond the training data. This evidence of extrapolation has an important implication for materials discovery. Namely, that we can expect a machine learning approach, at least in the case of bulk modulus, to assist in tasks that invovle identifying outstanding materials. With that said, these results rely on some key assumptions to hold true:
 
