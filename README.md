@@ -65,7 +65,8 @@ This function contains code that is not critical to the submission but gives goo
 
 Two key metrics were examined to determine the ability of machine learning algorithms to extrapolate, **precision** and **recall**. Precision and recall are formally defined by the following,
 
-![equation](http://latex.codecogs.com/gif.latex?precision = \frac{tp}{tp+fp} = \frac{\text{# correct}}{\text{# predicted as extraordinary}})
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;precision = \frac{tp}{tp+fp} = \frac{\text{# correct}}{\text{# predicted as extraordinary}}" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" />
+
 
 ```math
 precision = \frac{tp}{tp+fp} = \frac{\text{# correct}}{\text{# predicted as extraordinary}}
