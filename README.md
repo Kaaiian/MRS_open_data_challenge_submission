@@ -90,7 +90,7 @@ With these metrics in mind, we can compute precision and recall for all models. 
 
 The following figures show the distinct advantages to a classification approach. For example, using a model with high precision will result in fewer tests before identifying extraordinary compounds. We can see that the logistic regression generally has a higher precision when compared to regression models. If extraordinary materials exist, models with a higher recall will be better at finding them. The classification-based models exhibit a higher recall while maintaining an acceptable precision. Therefore, classification-based models are more useful for correctly identifying extraordinary compounds. 
 
-| $\:$| Linear  | Non-linear|
+| | Linear  | Non-linear|
 |:---|:---|:---|
 |**Regression** | ![](figures/rr_test_reg_thresh=210.00.png)| ![](figures/svr_test_reg_thresh=195.00.png)  |  
 |**Classification** | ![](figures/lr_test_prob_thresh=0.25.png)  |  ![](figures/svc_test_prob_thresh=0.20.png)|
