@@ -128,9 +128,9 @@ X_test.to_csv('data/X_test.csv', index=False)
 y_train.to_csv('data/y_train.csv', index=False)
 y_test.to_csv('data/y_test.csv', index=False)
 
-X_pcd_scaled.to_csv('data/X_pcd_scaled.csv', index=False)
-X_pcd.to_csv('data/X_pcd.csv', index=False)
-
 formula_train.to_csv('data/formula_train.csv', index=False)
 formula_test.to_csv('data/formula_test.csv', index=False)
-formula_pcd.to_csv('data/formula_pcd.csv', index=False)
+
+X_pcd_scaled.to_csv('pcd_data/X_pcd_scaled.csv', index=False)
+X_pcd.to_csv('pcd_data/X_pcd.csv', index=False)
+formula_pcd.to_csv('pcd_data/formula_pcd.csv', index=False)
