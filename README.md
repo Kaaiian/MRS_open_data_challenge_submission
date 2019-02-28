@@ -1,7 +1,7 @@
 # MRS Open Data Challenge
 
 
-# Beyond the training set: an exercize in extrapolation
+# Beyond the Training Set: An Exercize in Extrapolation
 
 
 # 1. Abstract
@@ -109,4 +109,6 @@ Ultimately, the objective is to evaluate whether or not extrapolation is possibl
 
 # 4. Conclusions
 
-While the predictive power of machine learning is well known, these models are generally designed to predict within the range of the model's training data. This leaves many researchers questioning whether these models can be used to extrapolate within the realm of materials research. We used various machine learning algorithms to explore the extrapolative power of models trained using a common material property, bulk modulus. Specifically, we looked at a linear regression (ridge regression) a non-linear regression (support vector regression), a linear classifier (logistic regression), and a non-linear classifier (support vector classification). While all algorithms showed predictive power, the classification models outperformed the regression models to a considerable extent. However, there was little difference between linear and non-linear models. Overall, the favorite model (logistic regression) achieves a precision of 0.48 and a recall of 0.78. This corresponds to a model with the ability to identify 80% of all extraordinary materials while still getting half the recommendations correct. From a scientific perspective, this corresponds to outstanding materials on every other attempt. A feat that is nothing less than... Extraordinary. 
+While the predictive power of machine learning is well known, these models are generally designed to predict within the range of the model's training data. This leaves many researchers questioning whether these models can be used to extrapolate within the realm of materials research. We used various machine learning algorithms to explore the extrapolative power of models trained using a common material property, bulk modulus. Noteably, the data that exists for high bulk modulus valued materials lack diversity. As a result, our models are unlikely to extrapolate to radicall new chemistries. However, they show promise extrpolaing in facilitate the discovery record breaking materials
+
+Specifically, we looked at a linear regression (ridge regression) a non-linear regression (support vector regression), a linear classifier (logistic regression), and a non-linear classifier (support vector classification). While all algorithms showed predictive power, the classification models outperformed the regression models to a considerable extent. However, there was little difference between linear and non-linear models. Overall, the favorite model (logistic regression) achieves a precision of 0.48 and a recall of 0.78. This corresponds to a model with the ability to identify 80% of all extraordinary materials while still getting half the recommendations correct. From a scientific perspective, this corresponds to outstanding materials on every other attempt. A feat that is nothing less than... Extraordinary. 
