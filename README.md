@@ -90,7 +90,7 @@ With these metrics in mind, we can compute precision and recall for all models. 
 |Ridge Regression | 0.37 | 0.46 |
 |Support Vector Regression | 0.29 | 0.77 |
 |Logistic Regression | 0.48 | 0.78 |
-|Support Vector Classifciation | 0.43 | 0.79 |
+|Support Vector Classifciation | 0.49 | 0.74 |
 
 The following figures show the distinct advantages to a classification approach. For example, using a model with high precision will result in fewer tests before identifying extraordinary compounds. We can see that the logistic regression generally has a higher precision when compared to regression models. If extraordinary materials exist, models with a higher recall will be better at finding them. The classification-based models exhibit a higher recall while maintaining an acceptable precision. Therefore, classification-based models are more useful for correctly identifying extraordinary compounds. 
 
