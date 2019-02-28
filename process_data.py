@@ -17,7 +17,7 @@ import composition
 df = pd.read_csv('data/merged_aflow+mp_data.csv', usecols=['formula', 'Bulk_VRH'])
 
 # read in compositions from the PCD
-df_pcd = pd.read_csv('data/PCD_valid_formulae.csv')
+df_pcd = pd.read_csv('pcd_data/PCD_valid_formulae.csv')
 df_pcd['target'] = 'unkown'
 df_pcd['formula'] = df_pcd['formula'].str.replace('[', '(')
 df_pcd['formula'] = df_pcd['formula'].str.replace(']', ')')
@@ -69,7 +69,7 @@ y_train = df_train.iloc[:, -1]
 formula_train  = df_train.iloc[:, -2]
 X_test = df_test.iloc[:, :-2]
 y_test = df_test.iloc[:, -1]
-formula_test  = df_train.iloc[:, -2]
+formula_test  = df_test.iloc[:, -2]
 
 # Here we convert the problem from a regression (what is the bulk modulus)
 # to a classification problem (is this compound 'exceptional')
