@@ -1,7 +1,7 @@
 # MRS Open Data Challenge
 
 
-# Beyond the Training Set: An Exercize in Extrapolation
+# Beyond the Training Set: An Exercise in Extrapolation
 
 
 # 1. Abstract
